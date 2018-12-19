@@ -957,7 +957,7 @@ class Generator
     public function getStubPath()
     {
         $path = resource_path('views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'generator'.DIRECTORY_SEPARATOR.'Stubs'.DIRECTORY_SEPARATOR);
-        $package_stubs_path = base_path('vendor'.DIRECTORY_SEPARATOR.'bvipul'.DIRECTORY_SEPARATOR.'generator'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'Stubs'.DIRECTORY_SEPARATOR);
+        $package_stubs_path = base_path('vendor'.DIRECTORY_SEPARATOR.'krgupta'.DIRECTORY_SEPARATOR.'generator'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'Stubs'.DIRECTORY_SEPARATOR);
         if($this->files->exists($path)) 
             return $path;
         else

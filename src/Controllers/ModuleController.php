@@ -121,6 +121,7 @@ class ModuleController extends Controller
      */
     public function checkTable(Request $request)
     {
+        
         if ($request->table) {
             if (Schema::hasTable($request->table)) {
                 return response()->json((object) [

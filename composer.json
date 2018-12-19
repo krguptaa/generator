@@ -14,5 +14,5 @@
             "Krgupta\\Generator\\": "src/"
         }
     },
-    "require": {}
+    "minimum-stability": "dev"
 }

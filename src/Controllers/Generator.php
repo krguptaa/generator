@@ -223,6 +223,9 @@ class Generator
         $this->delete_request = 'Delete'.$this->model.'Request';
         $this->manage_request = 'Manage'.$this->model.'Request';
 
+        // Is only model required
+        $this->only = !empty($input['model_only']) ? true : false;
+
         //CRUD Options
         $this->edit = !empty($input['model_edit']) ? true : false;
         $this->create = !empty($input['model_create']) ? true : false;

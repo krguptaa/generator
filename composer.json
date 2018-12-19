@@ -9,6 +9,8 @@
             "email": "webworldgk@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Krgupta\\Generator\\": "packages/krgupta/generator/src/"

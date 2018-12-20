@@ -65,18 +65,24 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
+      
         $this->generator->initialize($request->all());
-        $this->generator->createMigration();
-        $this->generator->createModel();
-        $this->generator->createRequests();
-        $this->generator->createResponses();
-        $this->generator->createRepository();
-        $this->generator->createController();
-        $this->generator->createTableController();
-        $this->generator->createRouteFiles();
-        $this->generator->insertToLanguageFiles();
-        $this->generator->createViewFiles();
-        $this->generator->createEvents();
+        if(!empty($request->all()['model_only']) && $request->all()['model_only'] == 1){
+            $this->generator->createMigration();
+            $this->generator->createModel();
+        }else{
+            $this->generator->createMigration();
+            $this->generator->createModel();
+            $this->generator->createRequests();
+            $this->generator->createResponses();
+            $this->generator->createRepository();
+            $this->generator->createController();
+            $this->generator->createTableController();
+            $this->generator->createRouteFiles();
+            $this->generator->insertToLanguageFiles();
+            $this->generator->createViewFiles();
+            $this->generator->createEvents();
+        }
         
         // Creating the Module
         $this->repository->create($request->all(), $this->generator->getPermissions());

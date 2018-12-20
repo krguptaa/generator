@@ -25,6 +25,7 @@
                             <th>{{ trans('labels.backend.modules.table.view_permission_id') }}</th>
                             <th>{{ trans('labels.backend.modules.table.url') }}</th>
                             <th>{{ trans('labels.backend.modules.table.created_by') }}</th>
+                            <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
@@ -45,6 +46,8 @@
                                 {!! Form::text('created_by', null, ["class" => "search-input-text form-control", "data-column" => 3, "placeholder" => trans('labels.backend.modules.table.created_by')]) !!}
                                 <a class="reset-data" href="javascript:void(0)"><i class="fa fa-times"></i></a>
                             </th>
+                            <th>
+                            </th>
                         </tr>
                     </thead>
                 </table>
@@ -52,13 +55,7 @@
         </div><!-- /.box-body -->
     </div><!--box-->
 
-    <!--<div class="box box-info">
-        <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('history.backend.recent_history') }}</h3>
-            <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            </div><!-- /.box tools -->
-        </div><!-- /.box-header -->
+
         <div class="box-body">
             {{-- {!! history()->renderType('Blog') !!} --}}
         </div><!-- /.box-body -->
@@ -82,7 +79,9 @@
                     {data: 'name', name: '{{config('module.table')}}.name'},
                     {data: 'view_permission_id', name: '{{config('module.table')}}.view_permission_id'},
                     {data: 'url', name: '{{config('module.table')}}.url'},
-                    {data: 'created_by', name: '{{config('access.users_table')}}.first_name'}
+                    {data: 'created_by', name: '{{config('access.users_table')}}.first_name'},
+                    {data: 'actions', name: 'actions', searchable: false, sortable: false}
+
                 ],
                 order: [[0, "asc"]],
                 searchDelay: 500,

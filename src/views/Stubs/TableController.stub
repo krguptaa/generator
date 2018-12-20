@@ -38,6 +38,7 @@ class DummyTableController extends Controller
     {
         return Datatables::of($this->dummy_small_repo_name->getForDataTable())
             ->escapeColumns(['id'])
+            ->addIndexColumn()
             ->addColumn('created_at', function ($dummy_small_repo_name) {
                 return Carbon::parse($dummy_small_repo_name->created_at)->toDateString();
             })

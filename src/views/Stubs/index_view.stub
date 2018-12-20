@@ -21,7 +21,7 @@
                 <table id="dummy_small_plural_model-table" class="table table-condensed table-hover table-bordered">
                     <thead>
                         <tr>
-                            <th>{{ trans('labels.backend.dummy_small_plural_model.table.id') }}</th>
+                            <th>{{ trans('labels.general.srn') }}</th>
                             <th>{{ trans('labels.backend.dummy_small_plural_model.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -54,11 +54,11 @@
                     type: 'post'
                 },
                 columns: [
-                    {data: 'id', name: '{{config('module.dummy_small_plural_model.table')}}.id'},
+                    {data: 'DT_Row_Index', orderable: false, searchable: false},
                     {data: 'created_at', name: '{{config('module.dummy_small_plural_model.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
-                order: [[0, "asc"]],
+                order: [[1, "asc"]],
                 searchDelay: 500,
                 dom: 'lBfrtip',
                 buttons: {

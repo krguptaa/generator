@@ -44,6 +44,7 @@ class ModuleRepository extends BaseRepository
      */
     public function create(array $input, array $permissions)
     {
+        
         $module = Module::where('name', $input['name'])->first();
         
         if (!$module) {
@@ -60,9 +61,9 @@ class ModuleRepository extends BaseRepository
             }
 
             $mod = [
-                'view_permission_id' => "view-$model-permission",
+                'view_permission_id' => (!empty($input['model_only']))?$model:"view-$model-permission",
                 'name'               => $input['name'],
-                'url'                => 'admin.'.str_plural($model).'.index',
+                'url'                => (!empty($input['model_only']))?$model:'admin.'.str_plural($model).'.index',
                 'created_by'         => access()->user()->id,
             ];
 

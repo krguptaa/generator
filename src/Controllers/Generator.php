@@ -366,20 +366,25 @@ class Generator
      */
     public function getPermissions()
     {
-        $permissions = [
-            $this->manage_permission
-        ];
+        $permissions = [];
+        if(!$this->only){
+            $permissions = [
+                $this->manage_permission
+            ];
 
-        if ($this->create) {
-            $permissions[] = $this->create_permission;
-            $permissions[] = $this->store_permission;
-        }
-        if ($this->edit) {
-            $permissions[] = $this->edit_permission;
-            $permissions[] = $this->update_permission;
-        }
-        if ($this->delete) {
-            $permissions[] = $this->delete_permission;
+            if ($this->create) {
+                $permissions[] = $this->create_permission;
+                $permissions[] = $this->store_permission;
+            }
+            if ($this->edit) {
+                $permissions[] = $this->edit_permission;
+                $permissions[] = $this->update_permission;
+            }
+            if ($this->delete) {
+                $permissions[] = $this->delete_permission;
+            }
+
+            
         }
 
         return $permissions;
